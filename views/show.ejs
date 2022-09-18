@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show Comment</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>
+      <%= todoItem.desc %>
+    </h1>
+    <h2>
+      <%= todoItem.date %>
+    </h2>
+    <h2>
+      <%= todoItem.time %>
+    </h2>
+    <div class="wrap col">
+      <div class="wrap">
+        <a class="todoBtn" href="/todo/<%= todoItem.id %>/edit">edit</a>
+        <form method="post" action="/todo/<%= todoItem.id %>?_method=DELETE">
+          <button class="todoBtn">delete</button>
+        </form>
+      </div>
+      <a class="todoBtn" href="/todo">home</a>
+    </div>
+  </div>
+</body>
+
+</html>

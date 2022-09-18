@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Todo</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>change of plans</h1>
+    <form id="newTodoForm" method="POST" action="/todo/<%= todoItem.id %>?_method=PATCH">
+      <textarea class="newTodoInput" name="desc" id="desc" cols="40"
+        rows="4"><%= todoItem.desc %> </textarea>
+      <input class="newTodoInput" type="date" name="date" id="date" value="<%= todoItem.date %>">
+      <input class="newTodoInput" type="time" name="time" id="time" value="<%= todoItem.time %>">
+      <button class="todoBtn">save</button>
+    </form>
+  </div>
+</body>
+
+</html>

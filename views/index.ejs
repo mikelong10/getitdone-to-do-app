@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List App</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>what do you want to do today?</h1>
+    <div class="wrap">
+      <a class="todoBtn" href="/todo/new">create todo</a>
+    </div>
+    <ul id="indexList">
+      <% for (let todo of todoItems) { %>
+        <a href="/todo/<%= todo.id %>">
+          <li class="indexListItem">
+            <p class="desc">
+              <%= todo.desc %>
+            </p>
+            <p class="date">
+              <%= todo.date %>
+            </p>
+            <p class="time">
+              <%= todo.time %>
+            </p>
+          </li>
+        </a>
+        <% } %>
+    </ul>
+  </div>
+</body>
+
+</html>

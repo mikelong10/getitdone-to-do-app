@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Todo</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>get something done</h1>
+    <form id="newTodoForm" method="post" action="/todo">
+      <textarea class="newTodoInput" name="desc" id="desc" cols="40" rows="4"></textarea>
+      <input class="newTodoInput" type="date" name="date" id="date">
+      <input class="newTodoInput" type="time" name="time" id="time">
+      <button class="todoBtn">do it</button>
+    </form>
+  </div>
+</body>
+
+</html>
