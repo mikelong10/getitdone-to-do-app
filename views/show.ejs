@@ -22,12 +22,12 @@
     </h2>
     <div class="wrap col">
       <div class="wrap">
-        <a class="todoBtn" href="/todo/<%= todoItem.id %>/edit">edit</a>
-        <form method="post" action="/todo/<%= todoItem.id %>?_method=DELETE">
+        <a class="todoBtn" href="/todos/<%= todoItem.id %>/edit">edit</a>
+        <form method="post" action="/todos/<%= todoItem.id %>?_method=DELETE">
           <button class="todoBtn">delete</button>
         </form>
       </div>
-      <a class="todoBtn" href="/todo">home</a>
+      <a class="todoBtn" href="/">home</a>
     </div>
   </div>
 </body>

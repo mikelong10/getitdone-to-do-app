@@ -12,7 +12,7 @@
 <body>
   <div class="container">
     <h1>change of plans</h1>
-    <form id="newTodoForm" method="POST" action="/todo/<%= todoItem.id %>?_method=PATCH">
+    <form id="newTodoForm" method="POST" action="/todos/<%= todoItem.id %>?_method=PATCH">
       <textarea class="newTodoInput" name="desc" id="desc" cols="40"
         rows="4"><%= todoItem.desc %> </textarea>
       <input class="newTodoInput" type="date" name="date" id="date" value="<%= todoItem.date %>">

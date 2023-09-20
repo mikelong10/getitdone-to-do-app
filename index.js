@@ -23,52 +23,52 @@ app.set("views", path.join(__dirname, "views"));
 let todoItems = [];
 
 // INDEX
-app.get("/todo", (req, res) => {
+app.get("/", (_req, res) => {
   res.render("index", { todoItems });
 })
 
 // NEW
-app.get("/todo/new", (req, res) => {
+app.get("/new", (_req, res) => {
   res.render("new")
 })
 
 // CREATE
-app.post("/todo", (req, res) => {
+app.post("/todos", (req, res) => {
   const { desc, date, time } = req.body;
   todoItems.push({ id: uuid(), desc, date, time });
-  res.redirect("/todo");
+  res.redirect("/");
 })
 
 // SHOW
-app.get("/todo/:id", (req, res) => {
+app.get("/todos/:id", (req, res) => {
   const { id } = req.params;
   const todoItem = todoItems.find(todo => todo.id === id);
   res.render("show", { todoItem });
 })
 
 // EDIT
-app.get("/todo/:id/edit", (req, res) => {
+app.get("/todos/:id/edit", (req, res) => {
   const { id } = req.params;
   const todoItem = todoItems.find(todo => todo.id === id);
   res.render("edit", { todoItem });
 })
 
 // UPDATE
-app.patch("/todo/:id", (req, res) => {
+app.patch("/todos/:id", (req, res) => {
   const { id } = req.params;
   const todoItem = todoItems.find(todo => todo.id === id);
   const { desc, date, time } = req.body;
   todoItem.desc = desc;
   todoItem.date = date;
   todoItem.time = time;
-  res.redirect("/todo");
+  res.redirect("/");
 })
 
 // DELETE
-app.delete("/todo/:id", (req, res) => {
+app.delete("/todos/:id", (req, res) => {
   const { id } = req.params;
   todoItems = todoItems.filter(todo => todo.id !== id);
-  res.redirect("/todo");
+  res.redirect("/");
 })
 
 // opens the specific port to start the express server
